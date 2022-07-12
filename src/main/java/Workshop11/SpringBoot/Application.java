@@ -1,6 +1,5 @@
 package Workshop11.SpringBoot;
 
-import java.util.logging.Logger;
 import org.springframework.boot.DefaultApplicationArguments;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -30,7 +29,7 @@ public class Application {
 	}
 	public static void main(String[] args) {
 		SpringApplication app = new SpringApplication(Application.class);
-		StringApplication.run(Application.class,args);
+		SpringApplication.run(Application.class,args);
 		DefaultApplicationArguments appArgs = new DefaultApplicationArguments(args);
 		List opsVal = appArgs.getOptionValues("port");
 		logger.info("opsVal >" + opsVal);
