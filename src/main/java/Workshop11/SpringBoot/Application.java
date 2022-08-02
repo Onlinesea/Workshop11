@@ -1,14 +1,15 @@
 package Workshop11.SpringBoot;
 
+import java.util.Collections;
+import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.DefaultApplicationArguments;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.filter.CommonsRequestLoggingFilter;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import java.util.Collections;
-import java.util.List;
 
 //Instancing the SpringBootApplication
 @SpringBootApplication
@@ -16,13 +17,14 @@ public class Application {
 
 	
 	//Logger is initialise to read the class 
-	private static final Logger logger = LoggerFactory.getLogger((Application.class));
+	private static final Logger logger2 = LoggerFactory.getLogger((Application.class));
 	//Initialising the String so that it can be used for the later part 
 	private static final String DEFAULT_PORT_NUMBER = " 3000";
 
 	//Setting the bean filter
 
 	@Bean
+	//This is to set what kind of information do you need for your logger
 	public CommonsRequestLoggingFilter requestLoggingFilter(){
 		//Instancing the logger class
 		CommonsRequestLoggingFilter logger = new CommonsRequestLoggingFilter();
@@ -50,7 +52,7 @@ public class Application {
 		List opsVal = appArgs.getOptionValues("port");
 
 		//How to see this in the logger?
-		logger.info("opsVal >" + opsVal);
+		logger2.info("opsVal >" + opsVal);
 
 		//Instancing the portNumber that will be used
 		String portNumber;
@@ -72,8 +74,8 @@ public class Application {
 			app.setDefaultProperties(Collections.singletonMap("server.port", portNumber));
 		}
 		app.run(args);
-		logger.info("Web app");
-		logger.debug("Web app");
+		logger2.info("Web app");
+		logger2.debug("Web app");
 
 	}
 
