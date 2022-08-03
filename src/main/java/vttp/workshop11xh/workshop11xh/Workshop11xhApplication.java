@@ -14,7 +14,7 @@ import org.springframework.web.filter.CommonsRequestLoggingFilter;
 @SpringBootApplication
 public class Workshop11xhApplication {
 
-	public static final Logger logger = LoggerFactory.getLogger(Workshop11xhApplication.class);
+	private static final Logger logger = LoggerFactory.getLogger(Workshop11xhApplication.class);
 
 	private static final String DEFAULT_PORT_NUMBER= "8080";
 	public static void main(String[] args) {
